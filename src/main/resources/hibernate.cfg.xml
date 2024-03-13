@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">Vietdoan2210</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=FJB_07_HN23_ORM</property>
+
+        <!-- properties -->
+        <property name="current_session_context_class">thread</property>
+        <property name="dialect">org.hibernate.dialect.SQLServer2016Dialect</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--        <property 	name="hibernate.cache.use_second_level_cache">true</property>-->
+        <!--        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>-->
+        <!--        <property name="net.sf.ehcache.configurationResourceName">ehcache.xml</property>-->
+
+        <!--        <property name="hibernate.cache.use_query_cache">true</property>-->
+
+        <mapping class="com.vn.entities.Employee"/>
+        <mapping class="com.vn.entities.User"/>
+        <mapping class="com.vn.entities.UserDetail" />
+        <mapping class="com.vn.entities.Order"/>
+        <mapping class="com.vn.entities.Product"/>
+        <mapping class="com.vn.entities.OrderDetail"/>
+        <mapping class="com.vn.entities.Report"/>
+    </session-factory>
+</hibernate-configuration>
